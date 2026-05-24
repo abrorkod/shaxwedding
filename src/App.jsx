@@ -293,26 +293,29 @@ export default function App() {
       </div>
 
       <audio ref={audioRef} src={audioSrc} loop preload="auto" className="hidden" />
-      <div className="fixed bottom-5 left-1/2 z-50 w-[min(92vw,420px)] -translate-x-1/2 rounded-full border border-white/80 bg-white/90 px-4 py-3 shadow-luxury backdrop-blur-xl">
-        <div className="flex items-center justify-between gap-3">
+      <div className="fixed bottom-5 left-1/2 z-50 w-[min(92vw,420px)] -translate-x-1/2 rounded-full border border-white/80 bg-white/90 px-3 py-2 shadow-luxury backdrop-blur-xl">
+        <div className="flex items-center justify-between gap-2">
           <button
             type="button"
             onClick={() => handleSectionScroll('wishes')}
-            className="rounded-full bg-[#98754b] px-5 py-3 text-sm font-semibold uppercase tracking-[0.26em] text-white shadow-lg shadow-[#d4b483]/20"
+            className="rounded-full bg-[#98754b] px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-white shadow-lg shadow-[#d4b483]/20"
           >
             Wishes
           </button>
-          <button
+          <motion.button
             type="button"
             onClick={() => setMusicOn((current) => !current)}
-            className="rounded-full border border-[#d4b483] bg-white px-4 py-3 text-sm font-semibold uppercase tracking-[0.26em] text-[#5f4a35]"
+            className="rounded-full border border-[#d4b483] bg-white px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#5f4a35] shadow-sm"
+            animate={musicOn ? { boxShadow: ['0px 0px 0px rgba(212,180,131,0.18)', '0px 0px 14px rgba(212,180,131,0.35)', '0px 0px 0px rgba(212,180,131,0.18)'] } : { scale: [1, 1.04, 1], boxShadow: ['0px 0px 0px rgba(212,180,131,0.15)', '0px 0px 12px rgba(212,180,131,0.3)', '0px 0px 0px rgba(212,180,131,0.15)'] }}
+            transition={{ duration: 1.4, repeat: Infinity, ease: 'easeInOut' }}
+            whileHover={{ scale: 1.08 }}
           >
             {musicOn ? 'Pause music' : 'Play music'}
-          </button>
+          </motion.button>
           <button
             type="button"
             onClick={() => handleSectionScroll('details')}
-            className="rounded-full border border-[#d4b483] bg-white px-4 py-3 text-sm font-semibold uppercase tracking-[0.26em] text-[#5f4a35]"
+            className="rounded-full border border-[#d4b483] bg-white px-4 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-[#5f4a35]"
           >
             Details
           </button>
