@@ -1,0 +1,16 @@
+{
+  "name": "Shakh & Ruxshona Wedding Invitation",
+  "short_name": "Shakh Wedding",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8efe2",
+  "theme_color": "#d4b483",
+  "description": "A luxury mobile-first invitation experience for Shakh and Ruxshona.",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
